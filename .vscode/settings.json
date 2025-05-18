@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "**/bundler/**/*.json": "jsonc",
+    "**/tsc/**/*.json": "jsonc"
+  }
+}
