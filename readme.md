@@ -54,14 +54,10 @@ If no, you're probably using an external bundler. Most frontend frameworks, like
 ```jsonc
 {
   // My code runs in the DOM:
-  "extends": "@total-typescript/tsconfig/bundler/dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/bundler/dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/bundler/dom/library-monorepo", // For a library in a monorepo
+  "extends": "@total-typescript/tsconfig/bundler/dom",
 
   // My code _doesn't_ run in the DOM (for instance, in Node.js):
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/library-monorepo" // For a library in a monorepo
+  "extends": "@total-typescript/tsconfig/bundler/no-dom",
 }
 ```
 
