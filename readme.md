@@ -63,19 +63,6 @@ If no, you're probably using an external bundler. Most frontend frameworks, like
 
 ## Options Not Covered:
 
-### `jsx`
-
-If your app has JSX, you can set the `jsx` option in your `tsconfig.json`:
-
-```json
-{
-  "extends": "@total-typescript/tsconfig/bundler/dom/app",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  }
-}
-```
-
 ### `outDir`
 
 Mostly relevant for when you're transpiling with `tsc`. If you want to change the output directory of your compiled files, you can set the `outDir` option in your `tsconfig.json`:
