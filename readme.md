@@ -31,10 +31,21 @@ The tricky thing about `tsconfig.json` is there is _not_ a single config file th
 
 #### Yes
 
-If yes, use this selection of configs:
+If yes, use this selection of configs in your `tsconfig.json` for typechecking:
 
 ```jsonc
 {
+  // tsconfig.json
+  "extends": "@total-typescript/tsconfig/tsc/typechecking/dom", // If your code runs in the DOM
+  "extends": "@total-typescript/tsconfig/tsc/typechecking/no-dom", // If your code doesn't run in the DOM
+}
+```
+
+and this selection of configs in your `tsconfig.build.json` for build (use script `tsc -p tsconfig.build.json`):
+
+```jsonc
+{
+  // tsconfig.build.json
   // My code runs in the DOM:
   "extends": "@total-typescript/tsconfig/tsc/dom/app", // For an app
   "extends": "@total-typescript/tsconfig/tsc/dom/library", // For a library

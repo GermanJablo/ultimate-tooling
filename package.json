@@ -13,13 +13,15 @@
   "author": "Matt Pocock",
   "license": "MIT",
   "exports": {
-    "./tsc/dom/app": "./tsc/dom/app.json",
-    "./tsc/dom/library": "./tsc/dom/library.json",
-    "./tsc/dom/library-monorepo": "./tsc/dom/library-monorepo.json",
-    "./tsc/no-dom/app": "./tsc/no-dom/app.json",
-    "./tsc/no-dom/library": "./tsc/no-dom/library.json",
-    "./tsc/no-dom/library-monorepo": "./tsc/no-dom/library-monorepo.json",
+    "./tsc/typechecking/dom": "./tsc/typechecking/dom.json",
+    "./tsc/typechecking/no-dom": "./tsc/typechecking/no-dom.json",
+    "./tsc/build/dom/app": "./tsc/build/dom/app.json",
+    "./tsc/build/dom/library": "./tsc/build/dom/library.json",
+    "./tsc/build/dom/library-monorepo": "./tsc/build/dom/library-monorepo.json",
+    "./tsc/build/no-dom/app": "./tsc/build/no-dom/app.json",
+    "./tsc/build/no-dom/library": "./tsc/build/no-dom/library.json",
+    "./tsc/build/no-dom/library-monorepo": "./tsc/build/no-dom/library-monorepo.json",
     "./bundler/dom": "./bundler/dom.json",
-    "./bundler/no-dom": "./bundler/no-dom.json",
+    "./bundler/no-dom": "./bundler/no-dom.json"
   }
 }

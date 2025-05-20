@@ -20,10 +20,22 @@
     "sourceMap": true,
     /* AND if you're building for a library: */
     "declaration": true,
-    /* AND if you're building for a library in a monorepo: */
-    "composite": true,
-    "declarationMap": true,
     /* If your code runs in the DOM: */
-    "lib": ["es2022", "dom", "dom.iterable"]
-  }
+    "lib": ["es2022", "dom", "dom.iterable"],
+    // Build defaults (1)
+    "noEmit": false,
+    "outDir": "${configDir}/dist"
+  },
+  // Build defaults (2)
+  "include": ["${configDir}/src"],
+  "exclude": [
+    "${configDir}/**/dist",
+    "${configDir}/**/*.test.*",
+    "${configDir}/**/*.spec.*",
+    "${configDir}/**/*.test-d.*",
+    "${configDir}/**/test/**",
+    "${configDir}/**/tests/**",
+    "${configDir}/**/_test/**",
+    "${configDir}/**/_tests/**"
+  ]
 }
