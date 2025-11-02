@@ -1,4 +1,4 @@
-# `@total-typescript/tsconfig`
+# `ultimate-tooling`
 
 `tsconfig.json` can seem extremely scary. But really, it's only 2 or 3 decisions you need to make.
 
@@ -9,7 +9,7 @@ This package makes those decisions even easier. Based on my [TSConfig Cheat Shee
 1. Install:
 
 ```bash
-npm install --save-dev @total-typescript/tsconfig
+npm install --save-dev ultimate-tooling
 ```
 
 2. Choose which `tsconfig.json` you need from the [list](#list-of-tsconfigs) below.
@@ -19,7 +19,7 @@ npm install --save-dev @total-typescript/tsconfig
 ```jsonc
 {
   // I'm building an app that runs in the DOM with an external bundler
-  "extends": "@total-typescript/tsconfig/bundler/dom/app"
+  "extends": "ultimate-tooling/bundler/dom"
 }
 ```
 
@@ -36,8 +36,8 @@ If yes, use this selection of configs in your `tsconfig.json` for typechecking:
 ```jsonc
 {
   // tsconfig.json
-  "extends": "@total-typescript/tsconfig/tsc/typechecking/dom", // If your code runs in the DOM
-  "extends": "@total-typescript/tsconfig/tsc/typechecking/no-dom", // If your code doesn't run in the DOM
+  "extends": "ultimate-tooling/tsc/typechecking/dom", // If your code runs in the DOM
+  "extends": "ultimate-tooling/tsc/typechecking/no-dom" // If your code doesn't run in the DOM
 }
 ```
 
@@ -47,14 +47,14 @@ and this selection of configs in your `tsconfig.build.json` for build (use scrip
 {
   // tsconfig.build.json
   // My code runs in the DOM:
-  "extends": "@total-typescript/tsconfig/tsc/dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/tsc/dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/tsc/dom/library-monorepo", // For a library in a monorepo
+  "extends": "ultimate-tooling/tsc/build/dom/app", // For an app
+  "extends": "ultimate-tooling/tsc/build/dom/library", // For a library
+  "extends": "ultimate-tooling/tsc/build/dom/library-monorepo", // For a library in a monorepo
 
   // My code _doesn't_ run in the DOM (for instance, in Node.js):
-  "extends": "@total-typescript/tsconfig/tsc/no-dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/tsc/no-dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/tsc/no-dom/library-monorepo" // For a library in a monorepo
+  "extends": "ultimate-tooling/tsc/build/no-dom/app", // For an app
+  "extends": "ultimate-tooling/tsc/build/no-dom/library", // For a library
+  "extends": "ultimate-tooling/tsc/build/no-dom/library-monorepo" // For a library in a monorepo
 }
 ```
 
@@ -65,10 +65,10 @@ If no, you're probably using an external bundler. Most frontend frameworks, like
 ```jsonc
 {
   // My code runs in the DOM:
-  "extends": "@total-typescript/tsconfig/bundler/dom",
+  "extends": "ultimate-tooling/bundler/dom",
 
   // My code _doesn't_ run in the DOM (for instance, in Node.js):
-  "extends": "@total-typescript/tsconfig/bundler/no-dom",
+  "extends": "ultimate-tooling/bundler/no-dom"
 }
 ```
 
@@ -80,7 +80,7 @@ Mostly relevant for when you're transpiling with `tsc`. If you want to change th
 
 ```json
 {
-  "extends": "@total-typescript/tsconfig/tsc/no-dom/library",
+  "extends": "ultimate-tooling/tsc/build/no-dom/library",
   "compilerOptions": {
     "outDir": "dist"
   }
