@@ -31,10 +31,21 @@ The tricky thing about `tsconfig.json` is there is _not_ a single config file th
 
 #### Yes
 
-If yes, use this selection of configs:
+If yes, use this selection of configs in your `tsconfig.json` for typechecking:
 
 ```jsonc
 {
+  // tsconfig.json
+  "extends": "@total-typescript/tsconfig/tsc/typechecking/dom", // If your code runs in the DOM
+  "extends": "@total-typescript/tsconfig/tsc/typechecking/no-dom", // If your code doesn't run in the DOM
+}
+```
+
+and this selection of configs in your `tsconfig.build.json` for build (use script `tsc -p tsconfig.build.json`):
+
+```jsonc
+{
+  // tsconfig.build.json
   // My code runs in the DOM:
   "extends": "@total-typescript/tsconfig/tsc/dom/app", // For an app
   "extends": "@total-typescript/tsconfig/tsc/dom/library", // For a library
@@ -54,31 +65,14 @@ If no, you're probably using an external bundler. Most frontend frameworks, like
 ```jsonc
 {
   // My code runs in the DOM:
-  "extends": "@total-typescript/tsconfig/bundler/dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/bundler/dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/bundler/dom/library-monorepo", // For a library in a monorepo
+  "extends": "@total-typescript/tsconfig/bundler/dom",
 
   // My code _doesn't_ run in the DOM (for instance, in Node.js):
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/app", // For an app
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/library", // For a library
-  "extends": "@total-typescript/tsconfig/bundler/no-dom/library-monorepo" // For a library in a monorepo
+  "extends": "@total-typescript/tsconfig/bundler/no-dom",
 }
 ```
 
 ## Options Not Covered:
-
-### `jsx`
-
-If your app has JSX, you can set the `jsx` option in your `tsconfig.json`:
-
-```json
-{
-  "extends": "@total-typescript/tsconfig/bundler/dom/app",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  }
-}
-```
 
 ### `outDir`
 
